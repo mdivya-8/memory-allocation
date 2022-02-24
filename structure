@@ -1,0 +1,13 @@
+Struct student 
+{
+Int rollno;                                                           
+Char name;                                      
+Float marks;
+}
+Struct student s={1,"divya"};
+Void main()
+{
+Struct student *ptr=&s;
+Printf("rollno is %d",ptr->rollno);
+Printf("rollno is %d",(*ptr.rollno);
+

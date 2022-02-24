@@ -1,0 +1,60 @@
+STATIC memory allocation:
+-> The memory allocated during compile time is called as static memory alloation(or)complie time memory allocation.
+   EX: int a;
+DYNAMIC MEMORY ALLOCATION:
+-> The memory allocated during run time is called as dynamic memory allocation(or)run time memory allocation.
+   EX: malloc,calloc,realloc and free.
+
+MALLOC:
+SYNTAX: (type*) malloc (int size)
+EX:  #include<stdio.h>
+#include<stdlib.h>
+int main(){
+    int *ptr=(int*)malloc(4);
+    *ptr=30;
+    printf("%d %p",*ptr,ptr);
+}
+-> on success it returns the starting address of allocated space.
+-> on failure returns null.
+    
+CALLOC:calloc()function is used to dynamically allocate multiple blocks of memory
+ SYNTAX:(type*) calloc (int n,int size)
+EX:#include<stdio.h>
+#include<stdlib.h>
+void main(){
+    int *ptr=(int*)calloc(10,4);
+    *ptr=20;
+    printf("%d %u\n",*ptr,ptr);
+}
+
+REALLOC:realloc()function is used to change the size of the memory block without losing the old data.
+SYNTAX:void *realloc(void *ptr,size_t new size)
+EX:#include<stdio.h>
+#include<stdlib.h>
+void main(){
+    int *ptr=(int*)malloc(4);
+    *ptr=20;
+    ptr=(int*)realloc(ptr,8);
+    printf("%d %u",*ptr,ptr);
+    
+}
+
+FREE:
+SYNTAX:void free(ptr)
+EX:#include<stdio.h>
+#include<stdlib.h>
+void main(){
+int *ptr=(int*)malloc(4);
+    *ptr=30;
+free(ptr);
+}
+
+#include<stdio.h>
+#include<stdlib.h>
+void main(){
+int *ptr=(int*)malloc(4);
+    *ptr=30;
+free(ptr);
+//ptr=NULL;
+printf("%u",ptr);
+}
